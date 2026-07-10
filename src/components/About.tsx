@@ -37,7 +37,7 @@ export default function About() {
                        bg-white/60 dark:bg-zinc-950/40 p-5 sm:p-7"
           >
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-              Soy Ingeniero en Informática egresado, orientado al desarrollo de
+              Soy Ingeniero en Informática titulado, orientado al desarrollo de
               software backend y aplicaciones full stack. Me interesa construir
               soluciones bien estructuradas, seguras y mantenibles, con foco en
               rendimiento y experiencia de usuario.
