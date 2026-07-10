@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Andrés Morales — Portafolio Personal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-Currently, two official plugins are available:
+Portafolio personal diseñado y desarrollado desde cero para destacar mi perfil como Ingeniero en Informática y Desarrollador Backend / Full Stack. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **Demo en vivo:** [moralesdev.cl](https://moralesdev.cl)
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## ✨ Características
 
-## Expanding the ESLint configuration
+- 📱 **Mobile-First Responsivo:** Diseño fluido que se adapta perfectamente a cualquier tamaño de pantalla.
+- 🌗 **Modo Oscuro/Claro:** Soporte nativo para cambio de tema integrado con Tailwind CSS.
+- 🎬 **Animaciones Fluidas:** Transiciones, efectos de hover y scroll-reveal implementados con Framer Motion para una experiencia premium.
+- ⚡ **Rendimiento Extremo:** Construido sobre Vite + React 19, con un bundle altamente optimizado.
+- 🔍 **SEO Optimizado:** Meta etiquetas completas y soporte Open Graph para previsualizaciones ricas al compartir el enlace.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologías Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Frontend:** React 19
+- **Lenguaje:** TypeScript 5
+- **Estilos:** Tailwind CSS 3
+- **Animaciones:** Framer Motion 12
+- **Build Tool:** Vite 7 (con SWC)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Cómo ejecutar en local
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Si deseas clonar el proyecto para revisarlo o usarlo como inspiración, sigue estos pasos:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/AAMoralesC/Portfolio.git
+   ```
+
+2. **Entrar al directorio:**
+   ```bash
+   cd Portfolio
+   ```
+
+3. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
+
+4. **Levantar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+La aplicación estará disponible en `http://localhost:5173`.
+
+---
+
+## 📫 Contacto
+
+- **LinkedIn:** [linkedin.com/in/andresmoralesc](https://www.linkedin.com/in/andresmoralesc/)
+- **Email:** andresdremc@gmail.com
+
+---
+
+*Diseñado y construido por Andrés Morales.*
