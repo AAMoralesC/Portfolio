@@ -9,12 +9,34 @@ type SkillCategory = {
 };
 
 const categories: SkillCategory[] = [
-  { name: "Lenguajes",              skills: ["JavaScript", "TypeScript", "PHP", "SQL"] },
-  { name: "Frameworks y Librerías", skills: ["Node.js", "Express", "Laravel", "React"] },
-  { name: "Bases de Datos",         skills: ["MySQL", "PostgreSQL"] },
-  { name: "DevOps y Herramientas",  skills: ["Docker", "Git", "GitHub", "Linux"] },
-  { name: "Conceptos y Prácticas",  skills: ["APIs REST", "JWT Auth", "Control de roles", "MVC", "Scrum"] },
-  { name: "Cloud y Despliegue",     skills: ["VPS", "Variables de entorno", "CI/CD básico"] },
+  {
+    name: "Lenguajes",
+    skills: ["JavaScript", "TypeScript", "PHP", "Python", "SQL", "HTML", "CSS"],
+  },
+  {
+    name: "Frameworks y Librerías",
+    skills: ["Laravel", "React", "Angular", "Django"],
+  },
+  {
+    name: "Bases de Datos",
+    skills: ["MySQL", "PostgreSQL", "SQL Server", "Oracle"],
+  },
+  {
+    name: "Herramientas",
+    skills: ["Git", "GitHub", "Linux"],
+  },
+  {
+    name: "Arquitectura de Software",
+    skills: ["MVC", "REST", "Separación de capas", "Diseño modular"],
+  },
+  {
+    name: "Ciberseguridad",
+    skills: ["Conceptos básicos", "Autenticación segura", "Control de acceso", "HTTPS / TLS"],
+  },
+  {
+    name: "Certificaciones",
+    skills: ["Scrum Master Prof.", "Scrum Foundation Prof."],
+  },
 ];
 
 const containerVariants: Variants = {
@@ -42,15 +64,6 @@ export default function Skills() {
           Habilidades técnicas
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.9, ease, delay: 0.08 }}
-          className="mt-3 text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl"
-        >
-          Stack tecnológico con el que trabajo y sigo profundizando.
-        </motion.p>
 
         <motion.div
           variants={containerVariants}

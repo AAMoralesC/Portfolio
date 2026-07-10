@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-16">
 
-          {/* ── Foto de perfil — arriba en mobile, derecha en desktop ── */}
+          {/* ── Foto de perfil ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.88 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -26,7 +26,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* ── Columna de texto — abajo en mobile, izquierda en desktop ── */}
+          {/* ── Columna de texto ── */}
           <div className="flex-1 min-w-0 md:order-1 text-center md:text-left">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="text-xs sm:text-sm tracking-wide text-zinc-600 dark:text-zinc-400"
             >
-              Backend / Full Stack • APIs • SQL • Cloud
+              Ingeniero en Informática · DUOC UC
             </motion.p>
 
             <motion.h1
@@ -52,8 +52,9 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
               className="mt-4 text-sm sm:text-base md:text-lg leading-relaxed text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto md:mx-0"
             >
-              Construyo backends escalables y productos full stack con foco en
-              rendimiento, seguridad y una experiencia limpia.
+              Desarrollo aplicaciones web con foco en el backend:
+              APIs REST, bases de datos relacionales y autenticación de usuarios.
+              Trabajo con Laravel, React y Python.
             </motion.p>
 
             <motion.div
@@ -70,6 +71,18 @@ export default function Hero() {
                            transition-colors"
               >
                 Ver proyectos
+              </a>
+              <a
+                href="/CV_Andres_Morales.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium
+                           bg-indigo-600 text-white hover:bg-indigo-500
+                           dark:bg-indigo-500 dark:hover:bg-indigo-400
+                           transition-colors shadow-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Descargar CV
               </a>
               <a
                 href="#contact"
@@ -89,7 +102,7 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.24 }}
               className="mt-6 flex flex-wrap gap-2 justify-center md:justify-start"
             >
-              {["Node.js", "Laravel", "MySQL", "PostgreSQL", "React", "Docker"].map((t) => (
+              {["Laravel", "React", "MySQL", "PostgreSQL", "TypeScript", "Python"].map((t) => (
                 <span
                   key={t}
                   className="text-xs px-3 py-1 rounded-full

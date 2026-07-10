@@ -14,7 +14,7 @@ const contactItems = [
   {
     id: "github",
     label: "GitHub",
-    description: "Revisa mi código",
+    description: "Revisa mis proyectos",
     href: "https://github.com/AAMoralesC",
     external: true,
     primary: false,
@@ -26,6 +26,14 @@ const contactItems = [
     href: "mailto:andresdremc@gmail.com",
     external: false,
     primary: false,
+  },
+  {
+    id: "cv",
+    label: "Currículum",
+    description: "Descargar en PDF",
+    href: "/CV_Andres_Morales.pdf",
+    external: true,
+    primary: true,
   },
 ];
 
@@ -39,7 +47,7 @@ export default function Contact() {
         transition={{ duration: 0.9, ease }}
         className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight"
       >
-        Contacto
+        Hablemos
       </motion.h2>
 
       <motion.p
@@ -49,8 +57,9 @@ export default function Contact() {
         transition={{ duration: 0.9, ease, delay: 0.08 }}
         className="mt-3 text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl"
       >
-        ¿Tienes un proyecto en mente o quieres hablar sobre oportunidades?
-        Escríbeme, estoy disponible.
+        Estoy buscando activamente mi primera oportunidad laboral.
+        Si tienes un proyecto, una vacante o simplemente quieres
+        conversar, escríbeme.
       </motion.p>
 
       <motion.div
@@ -58,7 +67,7 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.9, ease, delay: 0.16 }}
-        className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4"
+        className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
       >
         {contactItems.map((item) =>
           item.primary ? (

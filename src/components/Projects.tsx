@@ -14,9 +14,9 @@ type Project = {
 // ✏️ COMPLETA AQUÍ TUS PROYECTOS REALES:
 const projects: Project[] = [
   {
-    title: "Proyecto 1",
-    description: "Descripción de tu primer proyecto principal.",
-    tags: ["Node.js", "PostgreSQL", "Docker"],
+    title: "CiberPyme",
+    description: "Plataforma web full stack para diagnóstico de ciberseguridad en PYMES. Incluye autenticación, reportes y automatización de procesos mediante APIs REST, reduciendo los tiempos de diagnóstico en un 30%.",
+    tags: ["PHP", "Laravel", "MySQL", "API REST", "Autenticación"],
     github: null,
     demo: null,
   },
