@@ -1,53 +1,117 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { skillCategories } from "../data/skills";
+import { containerVariants, cardVariants, ease } from "../lib/motion";
+import type { Skill, SkillIcon } from "../types";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+// ─── Sub-componente: Icono SVG de tecnología ─────────────────────────────────
+// colored=false → currentColor con grayscale (neutro, igual que el texto)
+// colored=true  → brandColor original de la marca (se activa al hover de la tarjeta)
 
-type SkillCategory = {
+interface TechIconProps {
+  icon: SkillIcon;
+  colored: boolean;
+}
+
+function TechIcon({ icon, colored }: TechIconProps) {
+  const isStroke = icon.strokeBased;
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={icon.viewBox ?? "0 0 24 24"}
+      aria-hidden="true"
+      className="w-3.5 h-3.5 flex-shrink-0 transition-all duration-300"
+      fill={isStroke ? "none" : (colored ? icon.brandColor : "currentColor")}
+      stroke={isStroke ? (colored ? icon.brandColor : "currentColor") : "none"}
+      strokeWidth={isStroke ? "2" : undefined}
+      strokeLinecap={isStroke ? "round" : undefined}
+      strokeLinejoin={isStroke ? "round" : undefined}
+      style={
+        !isStroke
+          ? { filter: colored ? "none" : "grayscale(100%)" }
+          : undefined
+      }
+    >
+      {icon.paths.map((d, i) => (
+        <path key={i} d={d} />
+      ))}
+    </svg>
+  );
+}
+
+// ─── Sub-componente: Badge de skill individual ────────────────────────────────
+// Recibe `colored` y `expanded` del padre (CategoryCard).
+// En hover de la categoría: se expande y el icono muestra su color de marca.
+
+interface SkillBadgeProps {
+  skill: Skill;
+  colored: boolean;
+  expanded: boolean;
+}
+
+function SkillBadge({ skill, colored, expanded }: SkillBadgeProps) {
+  return (
+    <motion.span
+      animate={expanded ? { scale: 1.08 } : { scale: 1 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}
+      className="inline-flex items-center gap-1.5
+                 text-xs px-2.5 py-1 rounded-full cursor-default
+                 bg-zinc-100 text-zinc-700
+                 dark:bg-zinc-800 dark:text-zinc-300
+                 border border-zinc-200 dark:border-zinc-700
+                 transition-colors duration-200"
+    >
+      {skill.icon && <TechIcon icon={skill.icon} colored={colored} />}
+      {skill.name}
+    </motion.span>
+  );
+}
+
+// ─── Sub-componente: Tarjeta de categoría ─────────────────────────────────────
+// Gestiona el estado hover a nivel de tarjeta y lo propaga a todos los badges.
+
+interface CategoryCardProps {
   name: string;
-  skills: string[];
-};
+  skills: Skill[];
+}
 
-const categories: SkillCategory[] = [
-  {
-    name: "Lenguajes",
-    skills: ["JavaScript", "TypeScript", "PHP", "Python", "SQL", "HTML", "CSS"],
-  },
-  {
-    name: "Frameworks y Librerías",
-    skills: ["Laravel", "React", "Angular", "Django"],
-  },
-  {
-    name: "Bases de Datos",
-    skills: ["MySQL", "PostgreSQL", "SQL Server", "Oracle"],
-  },
-  {
-    name: "Herramientas",
-    skills: ["Git", "GitHub", "Linux"],
-  },
-  {
-    name: "Arquitectura de Software",
-    skills: ["MVC", "REST", "Separación de capas", "Diseño modular"],
-  },
-  {
-    name: "Ciberseguridad",
-    skills: ["Conceptos básicos", "Autenticación segura", "Control de acceso", "HTTPS / TLS"],
-  },
-  {
-    name: "Certificaciones",
-    skills: ["Scrum Master Prof.", "Scrum Foundation Prof."],
-  },
-];
+function CategoryCard({ name, skills }: CategoryCardProps) {
+  const [hovered, setHovered] = useState(false);
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
+  return (
+    <motion.div
+      variants={cardVariants}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      className="rounded-2xl border border-zinc-200 dark:border-zinc-800
+                 bg-white/60 dark:bg-zinc-900/40 p-5
+                 hover:border-indigo-300 dark:hover:border-indigo-700
+                 hover:shadow-lg dark:hover:shadow-[0_8px_30px_-10px_rgba(99,102,241,0.3)]
+                 transition-all duration-300"
+    >
+      {/* Nombre de la categoría */}
+      <p className="text-[10px] sm:text-xs font-semibold tracking-widest
+                    text-indigo-500 dark:text-indigo-400 uppercase mb-3">
+        {name}
+      </p>
 
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
-};
+      {/* Badges: todos se expanden y colorean al mismo tiempo */}
+      <div className="flex flex-wrap gap-1.5">
+        {skills.map((skill) => (
+          <SkillBadge
+            key={skill.name}
+            skill={skill}
+            colored={hovered}
+            expanded={hovered}
+          />
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+// ─── Componente principal: Skills ─────────────────────────────────────────────
 
 export default function Skills() {
   return (
@@ -64,7 +128,6 @@ export default function Skills() {
           Habilidades técnicas
         </motion.h2>
 
-
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -72,36 +135,11 @@ export default function Skills() {
           viewport={{ once: true, amount: 0.1 }}
           className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {categories.map((cat) => (
-            <motion.div
-              key={cat.name}
-              variants={cardVariants}
-              className="group rounded-2xl border border-zinc-200 dark:border-zinc-800
-                         bg-white/60 dark:bg-zinc-900/40 p-5
-                         hover:border-indigo-300 dark:hover:border-indigo-700
-                         hover:shadow-lg dark:hover:shadow-[0_8px_30px_-10px_rgba(99,102,241,0.3)]
-                         transition-all duration-300"
-            >
-              <p className="text-[10px] sm:text-xs font-semibold tracking-widest text-indigo-500 dark:text-indigo-400 uppercase mb-3">
-                {cat.name}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {cat.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-xs px-2.5 py-1 rounded-full
-                               bg-zinc-100 text-zinc-700
-                               dark:bg-zinc-800 dark:text-zinc-300
-                               border border-zinc-200 dark:border-zinc-700
-                               transition-colors duration-200"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+          {skillCategories.map((cat) => (
+            <CategoryCard key={cat.name} name={cat.name} skills={cat.skills} />
           ))}
         </motion.div>
+
       </div>
     </section>
   );

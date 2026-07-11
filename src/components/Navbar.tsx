@@ -4,24 +4,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import logoLight from "../assets/MoralesDevDark.svg";
 import logoDark from "../assets/MoralesDevLight.svg";
 import ThemeToggle from "./ThemeToggle";
+import { navLinks } from "../data/nav";
 
 interface Props {
   containerRef: RefObject<HTMLDivElement | null>;
 }
 
-const links = [
-  { id: "hero",     label: "Inicio"    },
-  { id: "about",    label: "Sobre mí"  },
-  { id: "skills",   label: "Skills"    },
-  { id: "projects", label: "Proyectos" },
-  { id: "contact",  label: "Contacto"  },
-];
+// ─── Componente: Navbar ───────────────────────────────────────────────────────
 
 export default function Navbar({ containerRef }: Props) {
   const [scrolled, setScrolled]     = useState(false);
   const [active, setActive]         = useState("hero");
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Detecta sección activa al hacer scroll
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -29,7 +25,7 @@ export default function Navbar({ containerRef }: Props) {
     const handleScroll = () => {
       setScrolled(container.scrollTop > 20);
 
-      links.forEach((link) => {
+      navLinks.forEach((link) => {
         const section = document.getElementById(link.id);
         if (!section) return;
         const rect = section.getBoundingClientRect();
@@ -43,7 +39,6 @@ export default function Navbar({ containerRef }: Props) {
     return () => container.removeEventListener("scroll", handleScroll);
   }, [containerRef]);
 
-  // Cerrar menú mobile al navegar
   const handleMobileNav = () => setMobileOpen(false);
 
   return (
@@ -58,13 +53,13 @@ export default function Navbar({ containerRef }: Props) {
 
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-3" aria-label="Inicio">
-          <img src={logoDark}  className="h-9 w-auto dark:hidden"        alt="MoralesDev Logo" />
-          <img src={logoLight} className="h-9 w-auto hidden dark:block"  alt="MoralesDev Logo" />
+          <img src={logoDark}  className="h-9 w-auto dark:hidden"       alt="MoralesDev Logo" />
+          <img src={logoLight} className="h-9 w-auto hidden dark:block" alt="MoralesDev Logo" />
         </a>
 
         {/* ── Desktop: links + toggle ── */}
         <div className="hidden md:flex items-center gap-8 text-base relative">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
@@ -150,7 +145,7 @@ export default function Navbar({ containerRef }: Props) {
                        border-b border-zinc-200 dark:border-zinc-800"
           >
             <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
-              {links.map((link) => (
+              {navLinks.map((link) => (
                 <a
                   key={link.id}
                   href={`#${link.id}`}

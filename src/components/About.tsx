@@ -12,7 +12,7 @@ export default function About() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
           className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight"
         >
-          Me interesa escribir código que funcione, que se entienda y que escale.
+          Mi objetivo es simple: escribir código funcional, que se entienda y que sea escalable.
         </motion.h2>
 
         <motion.div
@@ -57,7 +57,7 @@ export default function About() {
                   Formación y Certificaciones
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  Informática (DUOC UC) · Scrum Master Prof.
+                  Ingeniería en Informática (DUOC UC) · Scrum Master Professional
                 </p>
               </div>
               <div>

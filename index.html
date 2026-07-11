@@ -31,6 +31,35 @@
     <meta name="twitter:description" content="Ingeniero en Informática titulado de DUOC UC. Desarrollo backend y full stack con Node.js, Laravel, React, Python y PostgreSQL. Disponible para su primer empleo profesional." />
     <meta name="twitter:image"       content="https://moralesdev.cl/icon.png" />
     <meta name="twitter:image:alt"   content="moralesDev logo" />
+
+    <!-- ── Ciberseguridad (fallback client-side) ─────────────────────────────
+         Los headers principales se aplican en vercel.json (server-side).
+         Estos metas son un refuerzo para contextos donde los headers HTTP
+         no se propaguen (ej. iframe, caché, previews de servicios).
+    ─────────────────────────────────────────────────────────────────────── -->
+
+    <!-- Evita que el navegador infiera el MIME type (sniffing) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- Política de referrer: envía origen solo en requests same-origin o HTTPS→HTTPS -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Content Security Policy: permite solo recursos propios + CDNs necesarios.
+         Ajusta si agregas fuentes externas (Google Fonts, etc.). -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src  'self' 'unsafe-inline' https://va.vercel-scripts.com https://vitals.vercel-insights.com;
+        style-src   'self' 'unsafe-inline';
+        img-src     'self' data: https:;
+        font-src    'self' data:;
+        connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com;
+        frame-ancestors 'none';
+        base-uri    'self';
+        form-action 'self';
+      "
+    />
   </head>
   <body>
     <div id="root"></div>

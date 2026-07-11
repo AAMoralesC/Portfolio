@@ -1,50 +1,8 @@
 import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { projects } from "../data/projects";
+import { ease, containerVariants, projectCardVariants } from "../lib/motion";
 
-const ease = [0.22, 1, 0.36, 1] as const;
-
-type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-  github: string | null;
-  demo: string | null;
-};
-
-// ✏️ COMPLETA AQUÍ TUS PROYECTOS REALES:
-const projects: Project[] = [
-  {
-    title: "CiberPyme",
-    description: "Plataforma web full stack para diagnóstico de ciberseguridad en PYMES. Incluye autenticación, reportes y automatización de procesos mediante APIs REST, reduciendo los tiempos de diagnóstico en un 30%.",
-    tags: ["PHP", "Laravel", "MySQL", "API REST", "Autenticación"],
-    github: null,
-    demo: null,
-  },
-  {
-    title: "Ferremas",
-    description: "Aplicación web con integración de APIs externas para gestión de productos.",
-    tags: ["Laravel", "MySQL", "React"],
-    github: null,
-    demo: null,
-  },
-  {
-    title: "CodigoTrauma",
-    description: "Sistema de alertas para emergencias médicas.",
-    tags: ["TypeScript", "API REST", "JWT"],
-    github: null,
-    demo: null,
-  },
-];
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.18 } },
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
-};
+// ─── Componente: Proyectos ───────────────────────────────────────────────────
 
 const Projects = () => {
   return (
@@ -79,7 +37,7 @@ const Projects = () => {
         {projects.map((project) => (
           <motion.div
             key={project.title}
-            variants={cardVariants}
+            variants={projectCardVariants}
             className="group flex flex-col p-5 sm:p-7 rounded-2xl
                 border border-zinc-200/70 dark:border-zinc-800/80
                 bg-white/70 dark:bg-zinc-900/40 backdrop-blur-md
@@ -89,7 +47,7 @@ const Projects = () => {
                 hover:shadow-xl dark:hover:shadow-[0_20px_60px_-20px_rgba(99,102,241,0.55)]
                 hover:ring-1 hover:ring-zinc-300/50 dark:hover:ring-indigo-500/40"
           >
-            {/* Badge Próximamente */}
+            {/* Badge "Próximamente" si no hay links */}
             {!project.github && !project.demo && (
               <span className="self-start mb-3 text-[10px] font-semibold tracking-widest uppercase
                                px-2 py-0.5 rounded-full
@@ -109,7 +67,7 @@ const Projects = () => {
               {project.description}
             </p>
 
-            {/* Tags */}
+            {/* Tags de tecnologías */}
             {project.tags.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {project.tags.map((tag) => (
@@ -126,7 +84,7 @@ const Projects = () => {
               </div>
             )}
 
-            {/* Links */}
+            {/* Links: GitHub y Demo */}
             <div className="mt-5 flex gap-2.5">
               {project.github ? (
                 <a
@@ -149,6 +107,7 @@ const Projects = () => {
                   GitHub
                 </span>
               )}
+
               {project.demo ? (
                 <a
                   href={project.demo}
