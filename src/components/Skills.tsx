@@ -82,18 +82,23 @@ interface CategoryCardProps {
 }
 
 function CategoryCard({ displayName, skills, skillNameMap }: CategoryCardProps) {
-  const [hovered, setHovered] = useState(false);
+  const [active, setActive] = useState(false);
 
   return (
     <motion.div
       variants={cardVariants}
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      className="rounded-2xl border border-zinc-200 dark:border-zinc-800
-                 bg-white/60 dark:bg-zinc-900/40 p-5
-                 hover:border-indigo-300 dark:hover:border-indigo-700
-                 hover:shadow-lg dark:hover:shadow-[0_8px_30px_-10px_rgba(99,102,241,0.3)]
-                 transition-all duration-300"
+      // Desktop: hover natural
+      onHoverStart={() => setActive(true)}
+      onHoverEnd={() => setActive(false)}
+      // Mobile: tap para activar / desactivar
+      onTap={() => setActive((v) => !v)}
+      className={`rounded-2xl border p-5 cursor-pointer select-none
+                 transition-all duration-300
+                 ${active
+                   ? "border-indigo-300 dark:border-indigo-700 shadow-lg dark:shadow-[0_8px_30px_-10px_rgba(99,102,241,0.3)]"
+                   : "border-zinc-200 dark:border-zinc-800"
+                 }
+                 bg-white/60 dark:bg-zinc-900/40`}
     >
       {/* Nombre de la categoría */}
       <p className="text-[10px] sm:text-xs font-semibold tracking-widest
@@ -107,8 +112,8 @@ function CategoryCard({ displayName, skills, skillNameMap }: CategoryCardProps) 
           <SkillBadge
             key={skill.name}
             skill={skill}
-            colored={hovered}
-            expanded={hovered}
+            colored={active}
+            expanded={active}
             displayName={skillNameMap[skill.name] ?? skill.name}
           />
         ))}
