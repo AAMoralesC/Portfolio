@@ -1,10 +1,46 @@
 import { motion } from "framer-motion";
-import { contactItems } from "../data/contact";
 import { ease } from "../lib/motion";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 // ─── Componente: Contacto ────────────────────────────────────────────────────
 
 export default function Contact() {
+  const { language } = useLanguage();
+  const t = translations.contact[language];
+
+  // Construye la lista de items de contacto desde las traducciones
+  const contactItems = [
+    {
+      id: "linkedin",
+      ...t.items.linkedin,
+      href: "https://www.linkedin.com/in/andresmoralesc/",
+      external: true,
+      primary: true,
+    },
+    {
+      id: "github",
+      ...t.items.github,
+      href: "https://github.com/AAMoralesC",
+      external: true,
+      primary: false,
+    },
+    {
+      id: "email",
+      ...t.items.email,
+      href: "mailto:andresdremc@gmail.com",
+      external: false,
+      primary: false,
+    },
+    {
+      id: "cv",
+      ...t.items.cv,
+      href: "/CV_Andres_Morales.pdf",
+      external: true,
+      primary: true,
+    },
+  ];
+
   return (
     <div className="w-full">
       <motion.h2
@@ -14,7 +50,7 @@ export default function Contact() {
         transition={{ duration: 0.9, ease }}
         className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight"
       >
-        Hablemos
+        {t.heading}
       </motion.h2>
 
       <motion.p
@@ -24,9 +60,7 @@ export default function Contact() {
         transition={{ duration: 0.9, ease, delay: 0.08 }}
         className="mt-3 text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl"
       >
-        Estoy buscando activamente mi primera oportunidad laboral.
-        Si tienes un proyecto, una vacante o simplemente quieres
-        conversar, escríbeme.
+        {t.subheading}
       </motion.p>
 
       <motion.div

@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function About() {
+  const { language } = useLanguage();
+  const t = translations.about[language];
+
   return (
     <section className="w-full">
       <div className="max-w-5xl mx-auto">
@@ -12,7 +17,7 @@ export default function About() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
           className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight"
         >
-          Mi objetivo es simple: escribir código funcional, que se entienda y que sea escalable.
+          {t.headline}
         </motion.h2>
 
         <motion.div
@@ -28,17 +33,11 @@ export default function About() {
                        bg-white/60 dark:bg-zinc-950/40 p-5 sm:p-7"
           >
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-              Soy titulado de DUOC UC en Ingeniería en Informática, con mención en Gestión de Proyectos. Durante
-              la carrera desarrollé plataformas cubriendo backend y frontend,
-              diseñando APIs REST, bases de datos relacionales y módulos
-              de autenticación.
+              {t.bio1}
             </p>
 
             <p className="mt-4 text-sm sm:text-base md:text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-              Complemento mi perfil técnico (Laravel, React, Django, Python) con
-              experiencia real en Soporte Técnico (Entel), lo que fortaleció mis
-              habilidades de análisis, resolución de incidencias y comunicación
-              técnica con usuarios.
+              {t.bio2}
             </p>
           </div>
 
@@ -48,41 +47,40 @@ export default function About() {
                        bg-zinc-50 dark:bg-zinc-900/40 p-5 sm:p-7"
           >
             <p className="text-xs sm:text-sm tracking-wide text-zinc-500 dark:text-zinc-400">
-              En resumen
+              {t.sidebar_title}
             </p>
 
             <div className="mt-4 space-y-4">
               <div>
                 <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Formación y Certificaciones
+                  {t.edu_title}
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  Ingeniería en Informática (DUOC UC) · Scrum Master Professional
+                  {t.edu_body}
                 </p>
               </div>
               <div>
                 <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Área de interés
+                  {t.interest_title}
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  Backend, full stack, bases de datos y arquitectura de APIs.
+                  {t.interest_body}
                 </p>
               </div>
               <div>
                 <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Disponibilidad
+                  {t.availability_title}
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  Inmediata. Presencial, híbrido o remoto.
+                  {t.availability_body}
                 </p>
               </div>
               <div>
                 <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Abierto a roles como
+                  {t.roles_title}
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  Desarrollador Junior, Analista de Sistemas,
-                  DBA Junior, Soporte TI con perfil técnico.
+                  {t.roles_body}
                 </p>
               </div>
             </div>

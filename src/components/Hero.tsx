@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import profilePhoto from "../assets/profile.jpg";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function Hero() {
+  const { language } = useLanguage();
+  const t = translations.hero[language];
+
   return (
     <div className="w-full">
       <div className="max-w-5xl mx-auto">
@@ -18,7 +23,7 @@ export default function Hero() {
               <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-indigo-500/25 via-purple-500/20 to-transparent blur-2xl" />
               <img
                 src={profilePhoto}
-                alt="Foto de perfil de Andrés Morales"
+                alt={t.photo_alt}
                 className="relative w-full h-full rounded-full object-cover
                            border-2 border-zinc-200 dark:border-zinc-700
                            shadow-xl ring-4 ring-white/50 dark:ring-zinc-900/50"
@@ -34,7 +39,7 @@ export default function Hero() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="text-xs sm:text-sm tracking-wide text-zinc-600 dark:text-zinc-400"
             >
-              Ingeniero en Informática · DUOC UC
+              {t.subtitle}
             </motion.p>
 
             <motion.h1
@@ -52,9 +57,7 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
               className="mt-4 text-sm sm:text-base md:text-lg leading-relaxed text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto md:mx-0"
             >
-              Desarrollo aplicaciones web con foco en el backend:
-              APIs REST, bases de datos relacionales y autenticación de usuarios.
-              Trabajo con Laravel, React y Python.
+              {t.description}
             </motion.p>
 
             <motion.div
@@ -70,7 +73,7 @@ export default function Hero() {
                            dark:bg-white dark:text-black dark:hover:bg-zinc-200
                            transition-colors"
               >
-                Ver proyectos
+                {t.cta_projects}
               </a>
               <a
                 href="/CV_Andres_Morales.pdf"
@@ -82,7 +85,7 @@ export default function Hero() {
                            transition-colors shadow-sm"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                Descargar CV
+                {t.cta_cv}
               </a>
               <a
                 href="#contact"
@@ -91,7 +94,7 @@ export default function Hero() {
                            dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900
                            transition-colors"
               >
-                Contactar
+                {t.cta_contact}
               </a>
             </motion.div>
 

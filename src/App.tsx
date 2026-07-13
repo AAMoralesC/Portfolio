@@ -6,11 +6,13 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
+    <LanguageProvider>
     <div
       ref={scrollRef}
       className="h-screen overflow-y-scroll md:snap-y md:snap-mandatory scroll-smooth relative
@@ -54,6 +56,7 @@ function App() {
         </SectionWrapper>
       </div>
     </div>
+    </LanguageProvider>
   );
 }
 

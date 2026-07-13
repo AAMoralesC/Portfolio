@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import logoLight from "../assets/MoralesDevDark.svg";
 import logoDark from "../assets/MoralesDevLight.svg";
 import ThemeToggle from "./ThemeToggle";
-import { navLinks } from "../data/nav";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 interface Props {
   containerRef: RefObject<HTMLDivElement | null>;
@@ -16,6 +18,9 @@ export default function Navbar({ containerRef }: Props) {
   const [scrolled, setScrolled]     = useState(false);
   const [active, setActive]         = useState("hero");
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const { language } = useLanguage();
+  const navLinks = translations.nav[language];
 
   // Detecta sección activa al hacer scroll
   useEffect(() => {
@@ -37,7 +42,7 @@ export default function Navbar({ containerRef }: Props) {
 
     container.addEventListener("scroll", handleScroll);
     return () => container.removeEventListener("scroll", handleScroll);
-  }, [containerRef]);
+  }, [containerRef, navLinks]);
 
   const handleMobileNav = () => setMobileOpen(false);
 
@@ -57,7 +62,7 @@ export default function Navbar({ containerRef }: Props) {
           <img src={logoLight} className="h-9 w-auto hidden dark:block" alt="MoralesDev Logo" />
         </a>
 
-        {/* ── Desktop: links + toggle ── */}
+        {/* ── Desktop: links + toggles ── */}
         <div className="hidden md:flex items-center gap-8 text-base relative">
           {navLinks.map((link) => (
             <a
@@ -86,11 +91,16 @@ export default function Navbar({ containerRef }: Props) {
             </a>
           ))}
 
-          <ThemeToggle />
+          {/* Toggles de tema e idioma */}
+          <div className="flex items-center gap-2">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </div>
 
-        {/* ── Mobile: toggle + hamburguesa ── */}
-        <div className="flex md:hidden items-center gap-3">
+        {/* ── Mobile: toggles + hamburguesa ── */}
+        <div className="flex md:hidden items-center gap-2">
+          <LanguageToggle />
           <ThemeToggle />
 
           <button

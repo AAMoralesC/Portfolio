@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { skillCategories } from "../data/skills";
 import { containerVariants, cardVariants, ease } from "../lib/motion";
 import type { Skill, SkillIcon } from "../types";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 // ─── Sub-componente: Icono SVG de tecnología ─────────────────────────────────
 // colored=false → currentColor con grayscale (neutro, igual que el texto)
@@ -48,9 +50,10 @@ interface SkillBadgeProps {
   skill: Skill;
   colored: boolean;
   expanded: boolean;
+  displayName: string;
 }
 
-function SkillBadge({ skill, colored, expanded }: SkillBadgeProps) {
+function SkillBadge({ skill, colored, expanded, displayName }: SkillBadgeProps) {
   return (
     <motion.span
       animate={expanded ? { scale: 1.08 } : { scale: 1 }}
@@ -63,7 +66,7 @@ function SkillBadge({ skill, colored, expanded }: SkillBadgeProps) {
                  transition-colors duration-200"
     >
       {skill.icon && <TechIcon icon={skill.icon} colored={colored} />}
-      {skill.name}
+      {displayName}
     </motion.span>
   );
 }
@@ -73,10 +76,12 @@ function SkillBadge({ skill, colored, expanded }: SkillBadgeProps) {
 
 interface CategoryCardProps {
   name: string;
+  displayName: string;
   skills: Skill[];
+  skillNameMap: Record<string, string>;
 }
 
-function CategoryCard({ name, skills }: CategoryCardProps) {
+function CategoryCard({ displayName, skills, skillNameMap }: CategoryCardProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -93,7 +98,7 @@ function CategoryCard({ name, skills }: CategoryCardProps) {
       {/* Nombre de la categoría */}
       <p className="text-[10px] sm:text-xs font-semibold tracking-widest
                     text-indigo-500 dark:text-indigo-400 uppercase mb-3">
-        {name}
+        {displayName}
       </p>
 
       {/* Badges: todos se expanden y colorean al mismo tiempo */}
@@ -104,6 +109,7 @@ function CategoryCard({ name, skills }: CategoryCardProps) {
             skill={skill}
             colored={hovered}
             expanded={hovered}
+            displayName={skillNameMap[skill.name] ?? skill.name}
           />
         ))}
       </div>
@@ -114,6 +120,9 @@ function CategoryCard({ name, skills }: CategoryCardProps) {
 // ─── Componente principal: Skills ─────────────────────────────────────────────
 
 export default function Skills() {
+  const { language } = useLanguage();
+  const t = translations.skills[language];
+
   return (
     <section className="w-full">
       <div className="max-w-5xl mx-auto">
@@ -125,7 +134,7 @@ export default function Skills() {
           transition={{ duration: 0.9, ease }}
           className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight"
         >
-          Habilidades técnicas
+          {t.heading}
         </motion.h2>
 
         <motion.div
@@ -136,7 +145,15 @@ export default function Skills() {
           className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {skillCategories.map((cat) => (
-            <CategoryCard key={cat.name} name={cat.name} skills={cat.skills} />
+            <CategoryCard
+              key={cat.name}
+              name={cat.name}
+              displayName={
+                (t.categories as Record<string, string>)[cat.name] ?? cat.name
+              }
+              skills={cat.skills}
+              skillNameMap={t.skillNames as Record<string, string>}
+            />
           ))}
         </motion.div>
 
