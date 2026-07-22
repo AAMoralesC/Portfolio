@@ -28,43 +28,43 @@ function App() {
       {/* ThemeToggle integrado en Navbar */}
       <Navbar containerRef={scrollRef} />
 
-      <div id="hero" className="snap-start h-screen">
+      <div id="hero" className="snap-start min-h-screen md:h-screen">
         <SectionWrapper>
           <Hero />
         </SectionWrapper>
       </div>
 
-      <div id="about" className="snap-start h-screen">
+      <div id="about" className="snap-start min-h-screen md:h-screen">
         <SectionWrapper>
           <About />
         </SectionWrapper>
       </div>
 
-      <div id="experience" className="snap-start h-screen">
+      <div id="experience" className="snap-start min-h-screen md:h-screen">
         <SectionWrapper>
           <Experience />
         </SectionWrapper>
       </div>
 
-      <div id="skills" className="snap-start h-screen">
+      <div id="skills" className="snap-start min-h-screen md:h-screen">
         <SectionWrapper>
           <Skills />
         </SectionWrapper>
       </div>
 
-      <div id="certifications" className="snap-start h-screen">
+      <div id="certifications" className="snap-start min-h-screen md:h-screen">
         <SectionWrapper>
           <Certifications />
         </SectionWrapper>
       </div>
 
-      <div id="projects" className="snap-start h-screen">
+      <div id="projects" className="snap-start min-h-screen md:h-screen">
         <SectionWrapper>
           <Projects />
         </SectionWrapper>
       </div>
 
-      <div id="contact" className="snap-start h-screen">
+      <div id="contact" className="snap-start min-h-screen md:h-screen">
         <SectionWrapper>
           <Contact />
         </SectionWrapper>
