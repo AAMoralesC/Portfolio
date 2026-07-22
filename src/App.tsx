@@ -2,7 +2,9 @@ import { useRef } from "react";
 import SectionWrapper from "./components/SectionWrapper";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
+import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
@@ -26,31 +28,43 @@ function App() {
       {/* ThemeToggle integrado en Navbar */}
       <Navbar containerRef={scrollRef} />
 
-      <div id="hero" className="snap-start scroll-mt-24">
+      <div id="hero" className="snap-start h-screen">
         <SectionWrapper>
           <Hero />
         </SectionWrapper>
       </div>
 
-      <div id="about" className="snap-start scroll-mt-24">
+      <div id="about" className="snap-start h-screen">
         <SectionWrapper>
           <About />
         </SectionWrapper>
       </div>
 
-      <div id="skills" className="snap-start scroll-mt-24">
+      <div id="experience" className="snap-start h-screen">
+        <SectionWrapper>
+          <Experience />
+        </SectionWrapper>
+      </div>
+
+      <div id="skills" className="snap-start h-screen">
         <SectionWrapper>
           <Skills />
         </SectionWrapper>
       </div>
 
-      <div id="projects" className="snap-start scroll-mt-24">
+      <div id="certifications" className="snap-start h-screen">
+        <SectionWrapper>
+          <Certifications />
+        </SectionWrapper>
+      </div>
+
+      <div id="projects" className="snap-start h-screen">
         <SectionWrapper>
           <Projects />
         </SectionWrapper>
       </div>
 
-      <div id="contact" className="snap-start scroll-mt-24">
+      <div id="contact" className="snap-start h-screen">
         <SectionWrapper>
           <Contact />
         </SectionWrapper>

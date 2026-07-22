@@ -5,18 +5,22 @@ export const translations = {
   // ── Navegación ──────────────────────────────────────────────────────────────
   nav: {
     es: [
-      { id: "hero",     label: "Inicio"   },
-      { id: "about",    label: "Sobre mí" },
-      { id: "skills",   label: "Habilidades" },
-      { id: "projects", label: "Proyectos"},
-      { id: "contact",  label: "Contacto" },
+      { id: "hero",           label: "Inicio"          },
+      { id: "about",          label: "Sobre mí"         },
+      { id: "experience",     label: "Experiencia"      },
+      { id: "skills",         label: "Habilidades"      },
+      { id: "certifications", label: "Certificaciones"  },
+      { id: "projects",       label: "Proyectos"        },
+      { id: "contact",        label: "Contacto"         },
     ],
     en: [
-      { id: "hero",     label: "Home"     },
-      { id: "about",    label: "About"    },
-      { id: "skills",   label: "Skills"   },
-      { id: "projects", label: "Projects" },
-      { id: "contact",  label: "Contact"  },
+      { id: "hero",           label: "Home"           },
+      { id: "about",          label: "About"          },
+      { id: "experience",     label: "Experience"     },
+      { id: "skills",         label: "Skills"         },
+      { id: "certifications", label: "Certifications" },
+      { id: "projects",       label: "Projects"       },
+      { id: "contact",        label: "Contact"        },
     ],
   },
 
@@ -52,8 +56,8 @@ export const translations = {
       bio2:
         "Complemento mi perfil técnico (Laravel, React, Django, Python) con experiencia real en Soporte Técnico (Entel), lo que fortaleció mis habilidades de análisis, resolución de incidencias y comunicación técnica con usuarios.",
       sidebar_title:    "En resumen",
-      edu_title:        "Formación y Certificaciones",
-      edu_body:         "Ingeniería en Informática (DUOC UC) · Scrum Master Professional",
+      edu_title:        "Formación",
+      edu_body:         "Ingeniería en Informática · DUOC UC · Mención en Gestión de Proyectos",
       interest_title:   "Área de interés",
       interest_body:    "Backend, full stack, bases de datos y arquitectura de APIs.",
       availability_title: "Disponibilidad",
@@ -69,8 +73,8 @@ export const translations = {
       bio2:
         "I complement my technical profile (Laravel, React, Django, Python) with real-world experience in Technical Support (Entel), which strengthened my analysis, incident resolution, and technical communication skills.",
       sidebar_title:    "In brief",
-      edu_title:        "Education & Certifications",
-      edu_body:         "Computer Engineering (DUOC UC) · Scrum Master Professional",
+      edu_title:        "Education",
+      edu_body:         "Computer Engineering · DUOC UC · Project Management Specialization",
       interest_title:   "Area of interest",
       interest_body:    "Backend, full stack, databases, and API architecture.",
       availability_title: "Availability",
@@ -91,7 +95,6 @@ export const translations = {
         "Herramientas":              "Herramientas",
         "Arquitectura de Software":  "Arquitectura de Software",
         "Ciberseguridad":            "Ciberseguridad",
-        "Certificaciones":           "Certificaciones",
       },
       // Skill names that have translations
       skillNames: {
@@ -100,8 +103,6 @@ export const translations = {
         "Conceptos básicos":   "Conceptos básicos",
         "Autenticación segura":"Autenticación segura",
         "Control de acceso":   "Control de acceso",
-        "Scrum Master Prof.":  "Scrum Master Prof.",
-        "Scrum Foundation Prof.": "Scrum Foundation Prof.",
       },
     },
     en: {
@@ -113,7 +114,6 @@ export const translations = {
         "Herramientas":              "Tools",
         "Arquitectura de Software":  "Software Architecture",
         "Ciberseguridad":            "Cybersecurity",
-        "Certificaciones":           "Certifications",
       },
       skillNames: {
         "Separación de capas": "Layer Separation",
@@ -121,8 +121,6 @@ export const translations = {
         "Conceptos básicos":   "Basic Concepts",
         "Autenticación segura":"Secure Authentication",
         "Control de acceso":   "Access Control",
-        "Scrum Master Prof.":  "Scrum Master Prof.",
-        "Scrum Foundation Prof.": "Scrum Foundation Prof.",
       },
     },
   },
@@ -179,6 +177,18 @@ export const translations = {
         cv:         { label: "Résumé",     description: "Download as PDF"             },
       },
     },
+  },
+
+  // ── Experience ──────────────────────────────────────────────────────────────
+  experience: {
+    es: { heading: "Experiencia" },
+    en: { heading: "Experience" },
+  },
+
+  // ── Certifications ──────────────────────────────────────────────────────────
+  certifications: {
+    es: { heading: "Certificaciones", issued: "Expedido:", verified: "Verificado" },
+    en: { heading: "Certifications",  issued: "Issued:",   verified: "Verified"   },
   },
 
   // ── Theme / Lang toggles ────────────────────────────────────────────────────

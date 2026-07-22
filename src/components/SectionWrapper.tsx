@@ -13,8 +13,8 @@ export default function SectionWrapper({ children }: Props) {
   return (
     <section
       ref={ref}
-      className="md:min-h-screen flex items-center justify-center
-                 px-5 sm:px-8 py-20 md:py-0"
+      className="h-full pt-20 pb-6 flex items-center justify-center
+                 px-5 sm:px-8 overflow-y-auto"
     >
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.97 }}
