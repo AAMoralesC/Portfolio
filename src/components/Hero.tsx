@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profilePhoto from "../assets/profile.jpg";
+import profilePhoto from "../assets/profile.JPG";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
 
