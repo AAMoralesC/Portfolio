@@ -153,6 +153,10 @@ export const translations = {
       es: "Sistema web de gestión enfocado en arquitectura limpia y separación de responsabilidades. Aplica fuertemente principios de diseño modular y el patrón MVC para asegurar que el código sea mantenible, escalable y robusto a largo plazo.",
       en: "A web management system focused on clean architecture and separation of concerns. Strongly applies modular design principles and the MVC pattern to ensure the codebase is maintainable, scalable, and robust over time.",
     },
+    GitEz: {
+      es: "CLI interactiva que analiza los archivos en staging y sugiere mensajes de commit estandarizados bajo Conventional Commits. Detecta extensiones, documentación, tests y configuraciones para inferir automáticamente el tipo de commit. 100% local y offline, sin APIs ni LLMs.",
+      en: "An interactive CLI that analyzes staged files and suggests standardized commit messages following the Conventional Commits spec. Detects file extensions, docs, tests, and configs to infer the commit type automatically. 100% local and offline — no API keys required.",
+    },
   },
 
   // ── Contact ─────────────────────────────────────────────────────────────────

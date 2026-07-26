@@ -6,6 +6,13 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
+    title: "GitEz",
+    description: "",
+    tags: ["Python", "Typer", "Questionary", "Rich", "CLI"],
+    github: "https://github.com/AAMoralesC/GitEz",
+    demo: null,
+  },
+  {
     title: "CiberPyme",
     description:
       "Plataforma web de diagnóstico de ciberseguridad para PYMES. Incluye checklist dinámico con puntaje por categoría, análisis automático de brechas mediante OpenAI API, generación de reportes ejecutivos en PDF, autenticación y control de acceso por roles.",
@@ -30,3 +37,4 @@ export const projects: Project[] = [
     demo: null,
   },
 ];
+
