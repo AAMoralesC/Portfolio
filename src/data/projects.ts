@@ -8,8 +8,8 @@ export const projects: Project[] = [
   {
     title: "Kutral",
     description:
-      "Bot de Discord avanzado con arquitectura modular (Cogs). Integra un asistente de IA conversacional (Llama 3), sistema nativo de reproducción de música, mecánicas de experiencia (XP) y herramientas profesionales de moderación con persistencia de datos asíncrona mediante SQLite.",
-    tags: ["Python", "discord.py", "IA", "Groq API", "SQLite", "Bot"],
+      "Bot de Discord multifuncional con arquitectura modular. Integra Inteligencia Artificial Autónoma (Llama 3) capaz de ejecutar herramientas por sí sola (Tool Calling), sistema de música avanzado, mecánicas de experiencia (XP), comandos de asistente personal y moderación con persistencia de datos en SQLite.",
+    tags: ["Python", "discord.py", "IA", "Llama 3", "Groq API", "SQLite", "Bot"],
     github: "https://github.com/AAMoralesC/Kutral",
     demo: null,
   },
