@@ -6,6 +6,14 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
+    title: "Kutral",
+    description:
+      "Bot de Discord avanzado con arquitectura modular (Cogs). Integra un asistente de IA conversacional (Llama 3), sistema nativo de reproducción de música, mecánicas de experiencia (XP) y herramientas profesionales de moderación con persistencia de datos asíncrona mediante SQLite.",
+    tags: ["Python", "discord.py", "IA", "Groq API", "SQLite", "Bot"],
+    github: "https://github.com/AAMoralesC/Kutral",
+    demo: null,
+  },
+  {
     title: "GitEz",
     description: "",
     tags: ["Python", "Typer", "Questionary", "Rich", "CLI"],
