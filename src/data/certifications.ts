@@ -13,6 +13,13 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
+    name:         "Technical Support Fundamentals",
+    issuer:       "Google",
+    issuerType:   "google",
+    date:         "jul. 2026",
+    credentialId: "A77X2E9SQ75C",
+  },
+  {
     name:         "Introduction to AI",
     issuer:       "Google",
     issuerType:   "google",
