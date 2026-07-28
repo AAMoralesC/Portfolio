@@ -5,7 +5,7 @@
 export interface Certification {
   name:          string;   // Nombre oficial (mismo en ambos idiomas)
   issuer:        string;
-  issuerType:    "google" | "certiprof";
+  issuerType:    "google" | "certiprof" | "anthropic";
   date?:         string;   // "jul. 2026"
   credentialId?: string;
   credentialUrl?: string;
@@ -53,5 +53,26 @@ export const certifications: Certification[] = [
     issuerType:   "certiprof",
     date:         "ago. 2023",
     credentialId: "88245992",
+  },
+  {
+    name:         "Claude Code in Action",
+    issuer:       "Anthropic",
+    issuerType:   "anthropic",
+    date:         "jul. 2026",
+    credentialId: "2dm5hv24h9qp",
+  },
+  {
+    name:         "Claude Code 101",
+    issuer:       "Anthropic",
+    issuerType:   "anthropic",
+    date:         "jul. 2026",
+    credentialId: "actcp76xubi8",
+  },
+  {
+    name:         "Claude 101",
+    issuer:       "Anthropic",
+    issuerType:   "anthropic",
+    date:         "jul. 2026",
+    credentialId: "ox43yyehumx3",
   },
 ];
