@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { certifications } from "../data/certifications";
 import { containerVariants, cardVariants, ease } from "../lib/motion";
 import { useLanguage } from "../context/LanguageContext";
@@ -29,8 +29,8 @@ function AnthropicIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
       <path
-        fill="#c96442"
-        d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-3.654 0H6.57L0 20h3.603l1.378-3.504h6.875L10.173 3.52zm-1.243 9.963L10.63 7.16l2.033 6.323H8.93z"
+        fill="#D97757"
+        d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"
       />
     </svg>
   );
