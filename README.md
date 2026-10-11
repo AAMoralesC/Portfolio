@@ -33,7 +33,7 @@ Portafolio personal diseñado y desarrollado desde cero para destacar mi perfil 
 | **Sobre mí** | Formación académica y perfil profesional |
 | **Experiencia** | Historial laboral con descripción de responsabilidades |
 | **Habilidades** | Tecnologías agrupadas por categoría con íconos de marca |
-| **Certificaciones** | Certificaciones verificadas de Google y CertiProf |
+| **Certificaciones** | Certificaciones verificadas de Google, CertiProf y Anthropic |
 | **Proyectos** | Proyectos destacados con stack tecnológico |
 | **Contacto** | Links a LinkedIn, GitHub, email y CV |
 

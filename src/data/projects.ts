@@ -15,7 +15,7 @@ export const projects: Project[] = [
   },
   {
     title: "GitEz",
-    description: "",
+    description: "CLI interactiva que analiza los archivos en staging y sugiere mensajes de commit estandarizados bajo Conventional Commits. Detecta extensiones, documentación, tests y configuraciones para inferir automáticamente el tipo de commit. 100% local y offline, sin APIs ni LLMs.",
     tags: ["Python", "Typer", "Questionary", "Rich", "CLI"],
     github: "https://github.com/AAMoralesC/GitEz",
     demo: null,

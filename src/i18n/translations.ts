@@ -29,7 +29,7 @@ export const translations = {
     es: {
       subtitle: "Ingeniero en Informática · DUOC UC",
       description:
-        "Desarrollo aplicaciones web con foco en el backend: APIs REST, bases de datos relacionales y autenticación de usuarios. Trabajo con Laravel, React y Python.",
+        "Hoy desarrollo soluciones Odoo en Mobilize, con foco en el backend: APIs REST, bases de datos relacionales y autenticación de usuarios. Trabajo con Python, Laravel y React.",
       cta_projects: "Ver proyectos",
       cta_cv:       "Descargar CV",
       cta_contact:  "Contactar",
@@ -38,7 +38,7 @@ export const translations = {
     en: {
       subtitle: "Computer Engineering · DUOC UC",
       description:
-        "I build web applications with a focus on the backend: REST APIs, relational databases, and user authentication. I work with Laravel, React, and Python.",
+        "I currently build Odoo solutions at Mobilize, with a focus on the backend: REST APIs, relational databases, and user authentication. I work with Python, Laravel, and React.",
       cta_projects: "View projects",
       cta_cv:       "Download CV",
       cta_contact:  "Contact me",
@@ -50,35 +50,35 @@ export const translations = {
   about: {
     es: {
       headline:
-        "Mi objetivo es simple: escribir código funcional, que se entienda y que sea escalable.",
+        "Escribo código claro, mantenible y pensado para escalar.",
       bio1:
         "Soy titulado de DUOC UC en Ingeniería en Informática, con mención en Gestión de Proyectos. Durante la carrera desarrollé plataformas cubriendo backend y frontend, diseñando APIs REST, bases de datos relacionales y módulos de autenticación.",
       bio2:
-        "Complemento mi perfil técnico (Laravel, React, Django, Python) con experiencia real en Soporte Técnico (Entel), lo que fortaleció mis habilidades de análisis, resolución de incidencias y comunicación técnica con usuarios.",
+        "Actualmente desarrollo soluciones Odoo (Python, PostgreSQL, XML y JavaScript) en Mobilize. Antes trabajé en soporte técnico en Entel, lo que fortaleció mi análisis, resolución de incidencias y comunicación técnica con usuarios. Integro IA en mi trabajo y proyectos: desarrollo con agentes como OpenCode y Antigravity, y he integrado APIs de LLMs (OpenAI, Gemini, Llama 3). Cuento con certificaciones de Google y Anthropic en IA.",
       sidebar_title:    "En resumen",
       edu_title:        "Formación",
       edu_body:         "Ingeniería en Informática · DUOC UC · Mención en Gestión de Proyectos",
       interest_title:   "Área de interés",
       interest_body:    "Backend, full stack, bases de datos y arquitectura de APIs.",
       availability_title: "Disponibilidad",
-      availability_body:  "Inmediata. Presencial, híbrido o remoto.",
+      availability_body:  "Actualmente empleado. Abierto a nuevas oportunidades (presencial, híbrido o remoto).",
       roles_title:      "Abierto a roles como",
       roles_body:       "Desarrollador Junior, Analista de Sistemas, DBA Junior, Soporte TI con perfil técnico.",
     },
     en: {
       headline:
-        "My goal is simple: write code that works, is easy to understand, and scales well.",
+        "Write clear, maintainable code built to scale.",
       bio1:
         "I hold a degree in Computer Engineering from DUOC UC, with a focus on Project Management. During my studies I built full-stack platforms, designing REST APIs, relational databases, and authentication modules.",
       bio2:
-        "I complement my technical profile (Laravel, React, Django, Python) with real-world experience in Technical Support (Entel), which strengthened my analysis, incident resolution, and technical communication skills.",
+        "I currently build Odoo solutions (Python, PostgreSQL, XML, and JavaScript) at Mobilize. Previously I worked in technical support at Entel, which strengthened my analysis, incident resolution, and technical communication skills. I integrate AI into my work and projects: I develop with agents such as OpenCode and Antigravity, and I've integrated LLM APIs (OpenAI, Gemini, Llama 3). I hold Google and Anthropic AI certifications.",
       sidebar_title:    "In brief",
       edu_title:        "Education",
       edu_body:         "Computer Engineering · DUOC UC · Project Management Specialization",
       interest_title:   "Area of interest",
       interest_body:    "Backend, full stack, databases, and API architecture.",
       availability_title: "Availability",
-      availability_body:  "Immediate. On-site, hybrid, or remote.",
+      availability_body:  "Currently employed. Open to new opportunities (on-site, hybrid, or remote).",
       roles_title:      "Open to roles such as",
       roles_body:       "Junior Developer, Systems Analyst, Junior DBA, IT Support with a technical profile.",
     },
@@ -102,6 +102,7 @@ export const translations = {
         "Diseño modular":      "Diseño modular",
         "Conceptos básicos":   "Conceptos básicos",
         "Autenticación segura":"Autenticación segura",
+        "IA Generativa":       "IA Generativa",
         "Control de acceso":   "Control de acceso",
       },
     },
@@ -120,6 +121,7 @@ export const translations = {
         "Diseño modular":      "Modular Design",
         "Conceptos básicos":   "Basic Concepts",
         "Autenticación segura":"Secure Authentication",
+        "IA Generativa":       "Generative AI",
         "Control de acceso":   "Access Control",
       },
     },
@@ -141,6 +143,10 @@ export const translations = {
 
   // ── Project descriptions ────────────────────────────────────────────────────
   projectDescriptions: {
+    Kutral: {
+      es: "Bot de Discord multifuncional con arquitectura modular. Integra Inteligencia Artificial Autónoma (Llama 3) capaz de ejecutar herramientas por sí sola (Tool Calling), sistema de música avanzado, mecánicas de experiencia (XP), comandos de asistente personal y moderación con persistencia de datos en SQLite.",
+      en: "A multipurpose Discord bot with a modular architecture. Integrates an autonomous AI (Llama 3) able to run tools on its own (Tool Calling), an advanced music system, experience (XP) mechanics, personal assistant commands, and moderation with SQLite data persistence.",
+    },
     CiberPyme: {
       es: "Plataforma web de diagnóstico de ciberseguridad para PYMES. Incluye checklist dinámico con puntaje por categoría, análisis automático de brechas mediante OpenAI API, generación de reportes ejecutivos en PDF, autenticación y control de acceso por roles.",
       en: "A web-based cybersecurity diagnostic platform for SMEs. Features a dynamic checklist with per-category scoring, automatic gap analysis via the OpenAI API, executive PDF report generation, and role-based access control.",
@@ -163,7 +169,7 @@ export const translations = {
   contact: {
     es: {
       heading:    "Hablemos",
-      subheading: "Estoy buscando activamente mi primera oportunidad laboral. Si tienes un proyecto, una vacante o simplemente quieres conversar, escríbeme.",
+      subheading: "Trabajo como desarrollador Odoo y estoy abierto a conversar sobre proyectos y nuevas oportunidades. Si tienes una idea o una vacante, escríbeme.",
       items: {
         linkedin:   { label: "LinkedIn",    description: "Conectemos profesionalmente" },
         github:     { label: "GitHub",      description: "Revisa mis proyectos"       },
@@ -173,7 +179,7 @@ export const translations = {
     },
     en: {
       heading:    "Let's Talk",
-      subheading: "I'm actively looking for my first job opportunity. If you have a project, an opening, or just want to chat, reach out.",
+      subheading: "I work as an Odoo developer and I'm open to talking about projects and new opportunities. If you have an idea or an opening, reach out.",
       items: {
         linkedin:   { label: "LinkedIn",   description: "Let's connect professionally" },
         github:     { label: "GitHub",     description: "Check out my projects"        },
