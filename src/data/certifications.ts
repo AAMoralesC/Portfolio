@@ -13,6 +13,20 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
+    name:         "Lead Cybersecurity Professional Certification \u2013 LCSPC\u2122",
+    issuer:       "CertiProf",
+    issuerType:   "certiprof",
+    date:         "oct. 2026",
+    credentialId: "TLZZGDQLHGQ-XPYRTMSTR-RLRFDTRPHT",
+  },
+  {
+    name:         "Ethical Hacking Professional Certification (CEHPC)",
+    issuer:       "CertiProf",
+    issuerType:   "certiprof",
+    date:         "sept. 2026",
+    credentialId: "JLRRDSTSRPD-WKKNHCTVB-YTYYYBGYQD",
+  },
+  {
     name:         "Technical Support Fundamentals",
     issuer:       "Google",
     issuerType:   "google",

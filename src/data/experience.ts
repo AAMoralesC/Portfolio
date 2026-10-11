@@ -14,6 +14,24 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
+    role:     { es: "Desarrollador Odoo Junior Fullstack", en: "Junior Fullstack Odoo Developer" },
+    company:  "Mobilize / Odoo Official Partner",
+    type:     { es: "Jornada completa", en: "Full-time" },
+    period:   { es: "ago. 2026 – actualidad", en: "Aug 2026 – Present" },
+    duration: { es: "3 meses", en: "3 months" },
+    location: {
+      es: "Maipú, Región Metropolitana de Santiago, Chile · Presencial",
+      en: "Maipú, Santiago Metropolitan Region, Chile · On-site",
+    },
+    bullets: [
+      {
+        es: "Mi rol abarca tanto la evolución y optimización de soluciones existentes como el desarrollo de nuevas funcionalidades para resolver los retos de negocio de los clientes.",
+        en: "My role covers both the evolution and optimization of existing solutions and the development of new features to solve clients' business challenges.",
+      },
+    ],
+    tags: ["Desarrollo Full Stack", "Git", "Odoo", "Python", "PostgreSQL", "XML", "JavaScript"],
+  },
+  {
     role:     { es: "Asistente Técnico", en: "Technical Assistant" },
     company:  "Entel Connect Center",
     type:     { es: "Jornada parcial", en: "Part-time" },
