@@ -17,6 +17,7 @@ export const certifications: Certification[] = [
     issuer:       "CertiProf",
     issuerType:   "certiprof",
     date:         "nov. 2026",
+    credentialId: "FLLWBBLDWJQ-RGFGSGRJQ-WQWBHBKDZF",
   },
   {
     name:         "Lead Cybersecurity Professional Certification \u2013 LCSPC\u2122",
