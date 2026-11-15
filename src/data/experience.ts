@@ -25,11 +25,23 @@ export const experience: ExperienceItem[] = [
     },
     bullets: [
       {
-        es: "Mi rol abarca tanto la evolución y optimización de soluciones existentes como el desarrollo de nuevas funcionalidades para resolver los retos de negocio de los clientes.",
-        en: "My role covers both the evolution and optimization of existing solutions and the development of new features to solve clients' business challenges.",
+        es: "Desarrollo de módulos personalizados en Odoo 17, 18 y 19: modelos y ORM en Python, vistas XML/QWeb y componentes OWL.",
+        en: "Custom module development across Odoo 17, 18 and 19: Python models and ORM, XML/QWeb views and OWL components.",
+      },
+      {
+        es: "Integraciones entre Odoo y sistemas externos, ajustando flujos de datos entre plataformas.",
+        en: "Integrations between Odoo and external systems, aligning data flows across platforms.",
+      },
+      {
+        es: "QA de los desarrollos antes de entrega y pasos a producción de módulos personalizados.",
+        en: "QA of the developments before delivery and production releases of custom modules.",
+      },
+      {
+        es: "Evolución y optimización de soluciones existentes, además de nuevas funcionalidades para los retos de negocio de los clientes.",
+        en: "Evolution and optimization of existing solutions, plus new features for clients' business challenges.",
       },
     ],
-    tags: ["Desarrollo Full Stack", "Git", "Odoo", "Python", "PostgreSQL", "XML", "JavaScript"],
+    tags: ["Odoo 17/18/19", "Python", "ORM", "XML", "QWeb", "OWL", "PostgreSQL", "Git", "Integraciones", "QA"],
   },
   {
     role:     { es: "Asistente Técnico", en: "Technical Assistant" },
