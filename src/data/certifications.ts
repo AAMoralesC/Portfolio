@@ -13,6 +13,12 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
+    name:         "AI Agent Manager Certification \u2013 AIAM\u2122",
+    issuer:       "CertiProf",
+    issuerType:   "certiprof",
+    date:         "nov. 2026",
+  },
+  {
     name:         "Lead Cybersecurity Professional Certification \u2013 LCSPC\u2122",
     issuer:       "CertiProf",
     issuerType:   "certiprof",

@@ -248,7 +248,7 @@ export const skillCategories: SkillCategory[] = [
         },
       },
       {
-        name: "IA Generativa",
+        name: "IA Generativa & Agentes",
         icon: {
           viewBox: "0 0 24 24",
           brandColor: "#8B5CF6",
