@@ -9,7 +9,7 @@
 
 Portafolio personal diseñado y desarrollado desde cero para destacar mi perfil como Ingeniero en Informática y Desarrollador Backend / Full Stack.
 
-🔗 **Demo en vivo:** [moralesdev.cl](https://moralesdev.cl)
+🔗 **Demo en vivo:** [portfolio.moralesdev.cl](https://portfolio.moralesdev.cl)
 
 ---
 
