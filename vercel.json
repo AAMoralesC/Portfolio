@@ -16,16 +16,12 @@
           "value": "none"
         },
         {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
         },
         {
           "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=(), payment=()"
+          "value": "accelerometer=(), autoplay=(), bluetooth=(), browsing-topics=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()"
         },
         {
           "key": "Strict-Transport-Security",
@@ -33,15 +29,11 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vitals.vercel-insights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; manifest-src 'self'; base-uri 'self'; form-action 'self';"
+          "value": "default-src 'self'; script-src 'self' 'sha256-w+F6oAWXSTewHDhd9zs+HaXTKtUrGIu+bepBl/yMw5Y=' https://va.vercel-scripts.com https://vitals.vercel-insights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com; media-src 'self'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self';"
         },
         {
           "key": "Cache-Control",
           "value": "no-store, must-revalidate"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://www.moralesdev.cl"
         }
       ]
     },
